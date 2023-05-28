@@ -10,11 +10,28 @@
 </head>
 <body>
     <h1>Emma's Library</h1>
-    <button>Add Book</button>
-    <ol>
-        <li>test</li>
-        <li>test</li>
-        <li>test</li>
+    <button id="add-book">Add Book</button>
+    <div class="modal" id="modal">
+        <h1>Insert the details of the book</h1>
+        <button class="close" id="close">&times;</button>
+        <form id="form-body">
+            <label for="title">Book Title</label>
+            <input type="text" id="title" name="title">
+
+            <label for="author">Author</label>
+            <input type="text" id="author" name="author">
+
+            <label for="nr-pages">Number of pages</label>
+            <input type="number" id="nr-pages" name="nr-pages">
+
+            <label for="read">Status (Read/Not read)</label>
+            <input type="text" id="read" name="read">
+
+            <button type="button" id="submit">Submit</button>
+        </form>
+    </div>
+    <div class="" id="overlay"></div>
+    <ol id="bookcase">
     </ol>
 </body>
 </html>
