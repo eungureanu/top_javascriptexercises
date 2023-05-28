@@ -54,6 +54,12 @@ function closeModal() {
     activeOverlay.classList.remove("active");
 }
 
+
+function generateBookID(){
+    let bookID = Math.floor(Math.random() * 101);
+    return bookID;
+}
+
 function addBookToLibrary(){
     getUserInput();
     console.log(title, author, pagesNr, read);
@@ -62,6 +68,7 @@ function addBookToLibrary(){
     console.log(emmaLibrary);
     const bookShelf = document.createElement("li");
     bookShelf.innerHTML = emmaLibrary[emmaLibrary.length-1].info();
+    bookShelf.setAttribute("data-bookID", generateBookID());
     document.getElementById("bookcase").appendChild(bookShelf);
     closeModal();
     document.getElementById("form-body").reset();
