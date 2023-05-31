@@ -23,6 +23,7 @@ function displayBooks() {
     for (let i=0; i<emmaLibrary.length; i++){
         const bookShelf = document.createElement("li");
         bookShelf.innerHTML = emmaLibrary[i].info();
+        bookShelf.setAttribute("data-bookID", generateBookID());
         bookCase.appendChild(bookShelf);
     }
 }
@@ -74,4 +75,8 @@ function addBookToLibrary(){
     document.getElementById("form-body").reset();
 }
 
-displayBooks();
+function removeBookFromLibrary(){
+
+}
+
+// displayBooks();

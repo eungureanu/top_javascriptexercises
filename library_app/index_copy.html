@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emma's Library</title>
+    <link rel="stylesheet" href="library_styling.css">
+    <script src="library.js" defer></script>
+</head>
+<body>
+    <div class="heading">
+        <h1>Emma's Library</h1>
+        <button id="add-book">+ Add Book</button>
+    </div>
+    <table id="bookcase">
+        <thead>
+            <tr class="table-header">
+                <th>Title</th>
+                <th>Author</th>
+                <th>Pages</th>
+                <th>Status</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="table-row" id="bookShelf">
+                <td>The Hobbit</td>
+                <td>J.R.R. Tolkein</td>
+                <td>295</td>
+                <td><button class="status read">Read</button></td>
+                <td><button class="delete-button">Delete</button></td>
+            </tr>
+            <tr class="table-row" id="bookShelf">
+                <td>The Catcher in the Rye</td>
+                <td>J.D. Salinger</td>
+                <td>234</td>
+                <td><button class="status unread">Unread</button></td>
+                <td><button class="delete-button">Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+
+
+
+    <div class="modal" id="modal">
+        <h1>Insert the details of the book</h1>
+        <button class="close" id="close">&times;</button>
+        <form id="form-body">
+            <label for="title">Book Title</label>
+            <input type="text" id="title" name="title">
+
+            <label for="author">Author</label>
+            <input type="text" id="author" name="author">
+
+            <label for="nr-pages">Number of pages</label>
+            <input type="number" id="nr-pages" name="nr-pages">
+
+            <label for="read-unread">Read</label>
+            <input type="checkbox" id="read-unread" name="read-unread">
+
+            <button type="button" id="submit">Submit</button>
+        </form>
+    </div>
+    <div class="" id="overlay"></div>
+    <!-- <ol id="bookcase">
+    </ol> -->
+</body>
+</html>

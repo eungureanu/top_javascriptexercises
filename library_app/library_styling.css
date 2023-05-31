@@ -10,7 +10,7 @@
 }
 
 .modal.active {
-    visibility:visible;
+    visibility: visible;
 }
 
 button {
@@ -24,11 +24,100 @@ button {
     left: 0;
     right: 0;
     opacity: 0;
-    background-color: rgb(0,0,0,.5);
+    background-color: rgb(0, 0, 0, .5);
     pointer-events: none;
 }
 
 #overlay.active {
     pointer-events: all;
     opacity: 1;
+}
+
+.heading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    margin: 30px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+}
+
+#add-book{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    background:linear-gradient(to bottom, #33bdef 5%, #019ad2 100%);
+    color: white;
+    border-radius: 5px;
+    padding: 10px 15px;
+    border: none;
+}
+#add-book:hover{
+    background:linear-gradient(to top, #33bdef 5%, #019ad2 100%);
+}
+
+#bookcase {
+    text-align: left;
+    width: 80%;
+    margin: 0 auto;
+}
+
+th {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+    font-size: 22px;
+    color: rgb(40, 40, 40);
+    padding-bottom: 1%;
+}
+
+td {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+.delete-button {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    background-color: rgba(191, 13, 43, 0.8);
+    color: white;
+    border-radius: 5px;
+    padding: 5px 15px;
+    border: none;
+    width: 70%;
+}
+
+.delete-button:hover {
+    background-color: rgb(191, 13, 43);
+}
+
+.status {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    background-color: white;
+    border-radius: 20px;
+    padding: 5px 15px;
+    border: none;
+    width: 70%;
+}
+
+.read {
+    color: white;
+    background-color: green;
+}
+
+.read:hover {
+    color: white;
+    background-color: rgba(0, 128, 0, 0.7);
+}
+
+.unread {
+    color: white;
+    background-color: grey;
+}
+
+.unread:hover {
+    color: white;
+    background-color: rgba(128, 128, 128, 0.7);
 }
