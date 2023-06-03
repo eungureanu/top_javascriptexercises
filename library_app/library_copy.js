@@ -18,6 +18,17 @@ function getUserInput() {
     console.log(title, author, pagesNr, read);
 }
 
+function setStatus(){
+    let status;
+    if (document.getElementById("read-unread")==true){
+        status="<button class='status read'>Read</button>";
+    }
+    else {
+        status="<button class='status unread'>Unread</button>"
+    }
+    return status;
+}
+
 function displayBooks() {
     const bookCase = document.getElementById("table-body");
     for (let i=0; i<emmaLibrary.length; i++){
@@ -30,10 +41,9 @@ function displayBooks() {
         cell1.innerHTML = emmaLibrary[i].title;
         cell2.innerHTML = emmaLibrary[i].author;
         cell3.innerHTML = emmaLibrary[i].pagesNr;
-        cell4.innerHTML = emmaLibrary[i].read;
-        cell5.innerHTML = "tralala";
+        cell4.innerHTML = setStatus();
+        cell5.innerHTML = "<button class='delete-button'>Delete</button>";
         // bookShelf.setAttribute("data-bookID", generateBookID());
-        // bookCase.appendChild(bookShelf);
     }
 }
 
