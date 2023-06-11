@@ -10,6 +10,7 @@ document.getElementById("add-book").addEventListener("click", openModal);
 document.getElementById("close").addEventListener("click", closeModal);
 document.getElementById("submit").addEventListener("click", addBookToLibrary);
 document.getElementById("table-body").addEventListener("click", removeBookFromLibrary);
+document.getElementById("table-body").addEventListener("click", toggleStatus);
 
 
 function getUserInput() {
@@ -17,7 +18,6 @@ function getUserInput() {
     author=document.getElementById("author").value;
     pagesNr=document.getElementById("nr-pages").value;
     read=document.getElementById("read-unread").checked;
-    console.log(title, author, pagesNr, read);
 }
 
 function styleExistingStatus(i) {
@@ -54,12 +54,23 @@ function checkStatus(){
     return read;
 }
 
-function toggleStatus(){
-
+function toggleStatus(x){
+    if (x.target.innerHTML === "Read"){
+        console.log(x.target.classList);
+        x.target.innerHTML="Unread";
+        x.target.setAttribute("class", "status unread");
+        console.log(x.target.classList);
+    } else if (x.target.innerHTML === "Unread"){
+        console.log(x.target.classList);
+        x.target.innerHTML="Read";
+        x.target.setAttribute("class", "status read");
+        console.log(x.target.classList);
+    }
 }
 
+
 const bookCase = document.getElementById("table-body");
-function displayBooks() {
+function displayInitialBooks() {
     for (let i=0; i<emmaLibrary.length; i++){
         const bookShelf = bookCase.insertRow(0);
         const cell1=bookShelf.insertCell(0);
@@ -124,7 +135,6 @@ function addBookToLibrary(){
     cell5.innerHTML = "<button data-code="+uniqueBookId+" class='delete-button'>Delete</button>";
     closeModal();
     document.getElementById("form-body").reset();
-    console.log("The ID of the book you just added is "+uniqueBookId);
 }
 
 function removeBookFromLibrary(x) {
@@ -144,4 +154,4 @@ function removeBookFromLibrary(x) {
     }
 }
 
-displayBooks();
+displayInitialBooks();
